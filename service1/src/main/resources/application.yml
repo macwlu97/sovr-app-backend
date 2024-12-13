@@ -9,10 +9,10 @@ spring:
     discovery:
       enabled: true
     config:
-      uri: http://localhost:8888
+      uri: ${CONFIG_SERVER_URL}
 
   config:
-    import: configserver:http://localhost:8888
+    import: configserver:${CONFIG_SERVER_URL}
 
 server:
   port: 8081  # Port, na którym będzie nasłuchiwać Service1

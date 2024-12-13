@@ -13,9 +13,9 @@ spring:
         enabled: true
       routes:
         - id: service1-route
-          uri: lb://products/  # "lb" oznacza, że używamy Load Balancer (Eureka)
+          uri: lb://SERVICE1/  # "lb" oznacza, że używamy Load Balancer (Eureka)
           predicates:
-            - Path=/service1/**  # Wszystkie żądania z prefiksem "/service1" będą kierowane do service1
+            - Path=/products/**  # Wszystkie żądania z prefiksem "/service1" będą kierowane do service1
         - id: service2-route
           uri: lb://SERVICE2/
           predicates:
@@ -24,11 +24,11 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://192.168.0.100:8761/eureka/  # Adres Eureka Server
+      defaultZone: ${EUREKA_SERVER_URL} #http://192.168.0.100:8761/eureka/  # Adres Eureka Server
 
   instance:
-    hostname: 192.168.0.100  # Ustawienie hostname, jeżeli jest to potrzebne
-    prefer-ip-address: true  # W niektórych przypadkach może być konieczne preferowanie adresów IP
+    hostname: api-gateway #192.168.0.100  # Ustawienie hostname, jeżeli jest to potrzebne
+    prefer-ip-address: false  # W niektórych przypadkach może być konieczne preferowanie adresów IP
 
 # Opcjonalnie: Można dodać
 #

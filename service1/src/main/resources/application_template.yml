@@ -1,6 +1,6 @@
 spring:
   application:
-    name: service2
+    name: SERVICE1
 
   profiles:
     active: dev  # Określenie, który profil ma być aktywny
@@ -9,12 +9,13 @@ spring:
     discovery:
       enabled: true
     config:
-      uri: ${CONFIG_SERVER_URL}
+      uri: http://localhost:8888
 
   config:
-    import: configserver:${CONFIG_SERVER_URL}
+    import: configserver:http://localhost:8888
+
 server:
-  port: 8082
+  port: 8081  # Port, na którym będzie nasłuchiwać Service1
 
 management:
   endpoints:
