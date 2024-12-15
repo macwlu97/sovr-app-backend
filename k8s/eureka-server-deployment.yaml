@@ -17,6 +17,7 @@ spec:
       containers:
       - name: eureka-server
         image: macwlu/sovr-app:eureka-server
+        imagePullPolicy: Always
         ports:
         - containerPort: 8761
       imagePullSecrets:

@@ -17,11 +17,12 @@ spec:
       containers:
       - name: service1
         image: macwlu/sovr-app:service1
+        imagePullPolicy: Always
         ports:
         - containerPort: 8081
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "default"
+          value: "dev"
         - name: CONFIG_SERVER_URL
           value: "http://config-server:8888"
         - name: EUREKA_SERVER_URL

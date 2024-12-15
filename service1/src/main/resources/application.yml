@@ -1,9 +1,9 @@
 spring:
   application:
-    name: SERVICE1
+    name: service1
 
   profiles:
-    active: dev  # Określenie, który profil ma być aktywny
+    active: ${SPRING_PROFILES_ACTIVE}  # Określenie, który profil ma być aktywny
 
   cloud:
     discovery:

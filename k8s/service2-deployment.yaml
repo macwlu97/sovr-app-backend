@@ -17,6 +17,7 @@ spec:
       containers:
       - name: service2
         image: macwlu/sovr-app:service2
+        imagePullPolicy: Always
         ports:
         - containerPort: 8082
         env:

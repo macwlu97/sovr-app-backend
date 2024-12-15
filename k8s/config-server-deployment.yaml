@@ -17,11 +17,12 @@ spec:
       containers:
       - name: config-server
         image: macwlu/sovr-app:config-server
+        imagePullPolicy: Always
         ports:
         - containerPort: 8888
         env:
         - name: GIT_URI
-          value: "git@github.com:macwlu97/sovr-app-config.git"
+          value: https://github.com/macwlu97/sovr-app-config.git #"git@github.com:macwlu97/sovr-app-config.git"
         - name: GIT_USERNAME
           valueFrom:
             secretKeyRef:

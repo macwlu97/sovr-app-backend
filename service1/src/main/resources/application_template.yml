@@ -3,7 +3,7 @@ spring:
     name: SERVICE1
 
   profiles:
-    active: dev  # Określenie, który profil ma być aktywny
+    active: dev_test  # Określenie, który profil ma być aktywny
 
   cloud:
     discovery:
